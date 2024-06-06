@@ -28,6 +28,25 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		dependencies = {
+			-- main one
+			{ "ms-jpq/coq_nvim", branch = "coq" },
+
+			-- 9000+ Snippets
+			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+
+			{ "ms-jpq/coq.thirdparty", branch = "3p" },
+		},
+		init = function()
+			vim.g.coq_settings = {
+				auto_start = true,
+			}
+		end,
+		config = function() end,
+	},
+	{
 		"ray-x/go.nvim",
 		dependencies = {
 			"ray-x/guihua.lua",
@@ -120,5 +139,10 @@ require("lazy").setup({
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {},
+	},
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {}, -- your configuration
 	},
 })

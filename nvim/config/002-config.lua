@@ -28,6 +28,11 @@ require("conform").setup({
 	},
 })
 
+-- setup tailwind-tools
+require("tailwind-tools").setup({
+	-- your configuration
+})
+
 vim.keymap.set("n", "<leader>p", function()
 	require("conform").format()
 end)
@@ -48,6 +53,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+-- set termguicolors
+vim.opt.termguicolors = true
 
 -- set tab to 4 space
 vim.opt.ts = 4
