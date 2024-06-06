@@ -1,6 +1,18 @@
 -- setup legendary
 require('legendary').setup({ extensions = { lazy_nvim = true } })
 
+-- setup telescope
+require('telescope').setup({
+  defaults = {
+	layout_strategy = 'vertical',
+	layout_config = {
+	  prompt_position = 'top',
+	  mirror = true,
+      vertical = { width = 0.85 },
+    },
+  },
+})
+
 -- go.nvim - format before save
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
