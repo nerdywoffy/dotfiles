@@ -1,0 +1,23 @@
+shell = { program = "/bin/zsh", args = ["-l"] }
+live_config_reload = true
+ipc_socket = true
+
+[window]
+dynamic_padding = true
+padding = { x = 6, y = 6 }
+decorations = "Buttonless"
+opacity = 0.9
+blur = true
+
+[font]
+normal = { family = "BerkeleyMono Nerd Font", style = "Regular" }
+size = 14
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[mouse]
+hide_when_typing = true
