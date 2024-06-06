@@ -88,4 +88,12 @@ require("lazy").setup({
 		"nvim-neotest/nvim-nio"
 	}
   },
+  {
+	"akinsho/toggleterm.nvim",
+	keys = {
+	  { "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggleterm" },
+	},
+	version = "*",
+	config = true
+  }
 })
