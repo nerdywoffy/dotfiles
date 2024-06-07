@@ -28,23 +28,23 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"neovim/nvim-lspconfig",
+		"hrsh7th/nvim-cmp",
 		lazy = false,
 		dependencies = {
-			-- main one
-			{ "ms-jpq/coq_nvim", branch = "coq" },
-
-			-- 9000+ Snippets
-			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
-
-			{ "ms-jpq/coq.thirdparty", branch = "3p" },
+			{
+				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-buffer",
+				"hrsh7th/cmp-path",
+				"hrsh7th/cmp-buffer",
+				"petertriho/cmp-git",
+				"nvim-lua/plenary.nvim",
+				"L3MON4D3/LuaSnip",
+				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-nvim-lsp",
+				"rafamadriz/friendly-snippets",
+				"onsails/lspkind.nvim",
+			},
 		},
-		init = function()
-			vim.g.coq_settings = {
-				auto_start = true,
-			}
-		end,
-		config = function() end,
 	},
 	{
 		"ray-x/go.nvim",
@@ -144,5 +144,42 @@ require("lazy").setup({
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {}, -- your configuration
+	},
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
 	},
 })

@@ -4,7 +4,6 @@ require("legendary").setup({ extensions = { lazy_nvim = true } })
 -- setup telescope
 require("telescope").setup({
 	defaults = {
-		layout_strategy = "vertical",
 		layout_config = {
 			prompt_position = "top",
 			mirror = true,
@@ -70,3 +69,7 @@ vim.opt.number = true
 vim.keymap.set("n", "<C-p>f", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<C-p>p", "<cmd>Telescope commands<cr>")
 vim.keymap.set("n", "<C-p>/", "<cmd>Telescope live_grep<cr>")
+
+-- tab navigation
+vim.keymap.set("n", "<leader>[", "<cmd>tabp<cr>")
+vim.keymap.set("n", "<leader>]", "<cmd>tabn<cr>")
