@@ -1,11 +1,31 @@
 #! /bin/bash
+# Sync Script for nerdywoffy/dotfiles
+# Modeline {
+#	 vi: foldmarker={,} foldmethod=marker foldlevel=0 tabstop=4 filetype=sh
+# }
 
-cp ~/.yabairc ./yabai/yabairc
-cp ~/.skhdrc ./skhd/skhdrc
-cp -R ~/.config/sketchybar ./
-cp ~/.tmux.conf ./tmux/tmux.conf
-cp -R ~/.config/alacritty ./
+# yabai (macOS only) {
+	cp ~/.yabairc ./yabai/yabairc
+# }
 
-# nvim related
-cp -R ~/.config/nvim ./
-echo "lazy-lock.json" > ./nvim/.gitignore
+# skhd (macOS only) {
+	cp ~/.skhdrc ./skhd/skhdrc
+# }
+
+# sketchybar (macOS only) {
+	cp -R ~/.config/sketchybar ./
+# }
+
+# tmux (macOS/win/linux) {
+	cp -R ~/.config/tmux ./
+	cp -R ~/.config/tmux-powerline ./
+# }
+
+# alacritty (macOS/win/linux) {
+	cp -R ~/.config/alacritty ./
+# }
+
+# nvim (macOS/win/linux) {
+	cp -R ~/.config/nvim ./
+	echo "lazy-lock.json" > ./nvim/.gitignore
+# }
