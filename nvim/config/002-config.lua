@@ -22,9 +22,28 @@ require("conform").setup({
 		lua = { "stylua" },
 		javascript = { { "prettierd", "prettier" } },
 		json = { "jq" },
-		yaml = { "yq" },
+		-- yaml = { "yq" },
+		bash = { "beautysh" },
 		javascript = { { "prettierd", "prettier" } },
 	},
+})
+
+vim.api.nvim_create_user_command("FormatDisable", function(args)
+	if args.bang then
+		-- FormatDisable! will disable formatting just for this buffer
+		vim.b.disable_autoformat = true
+	else
+		vim.g.disable_autoformat = true
+	end
+end, {
+	desc = "Disable autoformat-on-save",
+	bang = true,
+})
+vim.api.nvim_create_user_command("FormatEnable", function()
+	vim.b.disable_autoformat = false
+	vim.g.disable_autoformat = false
+end, {
+	desc = "Re-enable autoformat-on-save",
 })
 
 -- setup tailwind-tools
@@ -73,3 +92,6 @@ vim.keymap.set("n", "<C-p>/", "<cmd>Telescope live_grep<cr>")
 -- tab navigation
 vim.keymap.set("n", "<leader>[", "<cmd>tabp<cr>")
 vim.keymap.set("n", "<leader>]", "<cmd>tabn<cr>")
+
+-- disable mouse
+vim.opt.mouse = ""

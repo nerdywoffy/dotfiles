@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		keys = {
@@ -80,6 +81,7 @@ require("lazy").setup({
 		build = "cd app && npm install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
+			vim.g.mkdp_theme = "light"
 		end,
 		ft = { "markdown" },
 	},
@@ -181,5 +183,8 @@ require("lazy").setup({
 				desc = "Quickfix List (Trouble)",
 			},
 		},
+	},
+	{
+		"tpope/vim-fugitive",
 	},
 })

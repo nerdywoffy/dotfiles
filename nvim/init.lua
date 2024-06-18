@@ -4,3 +4,4 @@ package.path = os.getenv("HOME") .. "/.config/nvim/config/?.lua;" .. package.pat
 require("000-lazy")
 require("001-mason")
 require("002-config")
+require("003-theme")

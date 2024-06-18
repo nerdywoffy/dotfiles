@@ -111,7 +111,7 @@ require("cmp_git").setup()
 -- initiaize Gopls
 
 -- intialize everything
-local servers = { "tailwindcss", "tsserver", "eslint", "html", "cssls" }
+local servers = { "tailwindcss", "tsserver", "eslint", "html", "cssls", "pylsp", "bashls" }
 for _, server in ipairs(servers) do
 	require("lspconfig")[server].setup({ capabilities = capabilities })
 end
