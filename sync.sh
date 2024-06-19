@@ -19,6 +19,9 @@
 # tmux (macOS/win/linux) {
 	cp -R ~/.config/tmux ./
 	cp -R ~/.config/tmux-powerline ./
+
+	# Ignore tpm plugins folder
+	printf 'plugins' > ./tmux/.gitignore
 # }
 
 # alacritty (macOS/win/linux) {

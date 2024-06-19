@@ -26,7 +26,7 @@
 	export TMUX_POWERLINE_STATUS_INTERVAL="1"
 	# The location of the window list. Can be {"absolute-centre, centre, left, right"}.
 	# Note that "absolute-centre" is only supported on `tmux -V` >= 3.2.
-	export TMUX_POWERLINE_STATUS_JUSTIFICATION="centre"
+	export TMUX_POWERLINE_STATUS_JUSTIFICATION="absolute-centre"
 
 	# The maximum length of the left status bar.
 	export TMUX_POWERLINE_STATUS_LEFT_LENGTH="60"
@@ -215,9 +215,9 @@
 	# File to be read in case the song is being read from a file
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_FILE_NAME="/tmp/nowplaying"
 	# Maximum output length.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="32"
+	export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="24"
 	# How to handle too long strings. Can be {trim, roll}.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="roll"
+	export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="trim"
 	# Characters per second to roll if rolling trim method is used.
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SPEED="1"
 	# Mode of roll text {"space", "repeat"}. space: fill up with empty space; repeat: repeat text from beginning
