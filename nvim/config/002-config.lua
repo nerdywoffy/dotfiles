@@ -85,6 +85,10 @@ vim.opt.sw = 4
 vim.opt.smarttab = true
 vim.opt.number = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+
 -- command pallette-alike commands
 vim.keymap.set("n", "<C-p>f", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<C-p>p", "<cmd>Telescope commands<cr>")
