@@ -25,6 +25,7 @@ require("conform").setup({
 		-- yaml = { "yq" },
 		bash = { "beautysh" },
 		javascript = { { "prettierd", "prettier" } },
+		sql = { "sql-formatter" },
 	},
 })
 
