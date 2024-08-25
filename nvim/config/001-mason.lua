@@ -2,11 +2,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
--- integrate go plugin with mason-lspconfig
--- https://github.com/ray-x/go.nvim?tab=readme-ov-file#integrate-with-mason-lspconfig
-require("go").setup({
-	lsp_cfg = false,
-})
 local gopls_cfg = require("go.lsp").config()
 require("lspconfig").gopls.setup(gopls_cfg)
 
@@ -111,7 +106,19 @@ require("cmp_git").setup()
 -- initiaize Gopls
 
 -- intialize everything
-local servers = { "tailwindcss", "tsserver", "eslint", "html", "cssls", "pylsp", "bashls", "intelephense", "sqls" }
+local servers = {
+	"gopls",
+	"tailwindcss",
+	"tsserver",
+	"eslint",
+	"html",
+	"cssls",
+	"pylsp",
+	"bashls",
+	"intelephense",
+	"sqls",
+	"yamlls",
+}
 for _, server in ipairs(servers) do
 	require("lspconfig")[server].setup({ capabilities = capabilities })
 end
