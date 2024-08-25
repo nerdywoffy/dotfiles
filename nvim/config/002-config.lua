@@ -84,6 +84,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+vim.api.nvim_create_user_command(
+	"DeleteRegisters",
+	"for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor",
+	{}
+)
+vim.api.nvim_create_user_command("ResetAll", "clearjumps | delm! | delm A-Z0-9 | DeleteRegisters", {
+	desc = "Reset jumps, marks, and registers",
+})
+
 -- set termguicolors
 vim.opt.termguicolors = true
 
