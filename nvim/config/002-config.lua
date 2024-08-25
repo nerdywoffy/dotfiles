@@ -104,6 +104,7 @@ vim.opt.sw = 4
 -- smart tab and number
 vim.opt.smarttab = true
 vim.opt.number = true
+-- vim.opt.rnu = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
