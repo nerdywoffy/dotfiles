@@ -18,6 +18,7 @@ require("lazy").setup({
 		keys = {
 			{ "<leader>ff", "<cmd>Neotree<cr>", desc = "NeoTree" },
 			{ "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+			{ "<leader>fr", "<cmd>Neotree reveal<cr>", desc = "NeoTree" },
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -25,7 +26,28 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 		config = function()
-			require("neo-tree").setup()
+			require("neo-tree").setup({
+				window = {
+					position = "left",
+				},
+				filesystem = {
+					window = {
+						fuzzy_finder_mappings = {
+							["<down>"] = "move_cursor_down",
+							["<C-n>"] = "move_cursor_down",
+							["<up>"] = "move_cursor_up",
+							["<C-p>"] = "move_cursor_up",
+						},
+					},
+				},
+				buffers = {
+					follow_current_file = {
+						enabled = true, -- This will find and focus the file in the active buffer every time
+						--              -- the current file is changed while the tree is open.
+						leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -45,6 +67,33 @@ require("lazy").setup({
 				"rafamadriz/friendly-snippets",
 				"onsails/lspkind.nvim",
 			},
+		},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+		opts = {
+			highlight = { enable = true },
+		},
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				highlight = {
+					enable = true,
+				},
+				ensure_installed = {
+					"vimdoc",
+					"luadoc",
+					"vim",
+					"lua",
+				},
+			})
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
 		},
 	},
 	{
@@ -111,9 +160,6 @@ require("lazy").setup({
 	},
 	{
 		"akinsho/toggleterm.nvim",
-		keys = {
-			{ "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggleterm" },
-		},
 		version = "*",
 		config = true,
 	},
@@ -187,4 +233,10 @@ require("lazy").setup({
 	{
 		"tpope/vim-fugitive",
 	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
+	{ "echasnovski/mini.nvim", version = "*" },
 })
