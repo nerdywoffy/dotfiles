@@ -239,4 +239,5 @@ require("lazy").setup({
 		lazy = false, -- This plugin is already lazy
 	},
 	{ "echasnovski/mini.nvim", version = "*" },
+	{ "mbledkowski/neuleetcode.vim" },
 })
