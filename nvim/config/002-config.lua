@@ -1,3 +1,14 @@
+-- setup toggleterm
+require("toggleterm").setup({
+	open_mapping = [[<leader>t]],
+	winbar = {
+		enabled = true,
+		name_formatter = function(term) --  term: Terminal
+			return term.name
+		end,
+	},
+})
+
 -- setup legendary
 require("legendary").setup({ extensions = { lazy_nvim = true } })
 
