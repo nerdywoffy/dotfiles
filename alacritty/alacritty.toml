@@ -3,8 +3,8 @@ live_config_reload = true
 ipc_socket = true
 
 [window]
-dynamic_padding = true
-padding = { x = 6, y = 6 }
+dynamic_padding = false
+# padding = { x = 6, y = 6 }
 decorations = "Buttonless"
 opacity = 0.9
 blur = true
